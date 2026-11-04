@@ -1,0 +1,5 @@
+-r core.txt
+gymnasium>=1.0
+stable-baselines3>=2.4
+onnx>=1.17
+onnxruntime>=1.20

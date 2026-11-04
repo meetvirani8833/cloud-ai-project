@@ -1,0 +1,111 @@
+{
+  "timesteps": 1000000,
+  "churn_penalty": 0.05,
+  "train_window": "validation days 11-12",
+  "eval_window": "test days 13-14",
+  "apps": 264,
+  "policies": [
+    {
+      "policy": "rl_ppo_vp1",
+      "total_cost_usd": 19071.3,
+      "violation_rate": 0.05735742845117845,
+      "apps_with_violation_share": 0.7916666666666666,
+      "mean_util": 0.4596871084267158,
+      "median_util": 0.4487864709720698,
+      "avg_replicas": 12.76238952020202,
+      "scaling_actions_per_app_day": 14.164772727272727,
+      "savings_vs_baseline_pct": 88.51,
+      "median_app_savings_pct": 72.88,
+      "violation_penalty": 1.0,
+      "train_seconds": 288.2,
+      "cumulative_reward": -222.73930433642428,
+      "baseline_reward": {
+        "reactive_hpa": -276.3927577791071,
+        "cloudopt_rules": -275.76774812738233
+      }
+    },
+    {
+      "policy": "rl_ppo_vp2",
+      "total_cost_usd": 23275.52,
+      "violation_rate": 0.02741608796296296,
+      "apps_with_violation_share": 0.6628787878787878,
+      "mean_util": 0.39070709977719065,
+      "median_util": 0.3753495262012389,
+      "avg_replicas": 16.088482481060606,
+      "scaling_actions_per_app_day": 13.217803030303031,
+      "savings_vs_baseline_pct": 85.97,
+      "median_app_savings_pct": 66.72,
+      "violation_penalty": 2.0,
+      "train_seconds": 292.4,
+      "cumulative_reward": -252.1064841573878,
+      "baseline_reward": {
+        "reactive_hpa": -362.521545657895,
+        "cloudopt_rules": -279.4798693395035
+      }
+    },
+    {
+      "policy": "rl_ppo_vp4",
+      "total_cost_usd": 25609.82,
+      "violation_rate": 0.023042929292929292,
+      "apps_with_violation_share": 0.5946969696969697,
+      "mean_util": 0.3743906282360736,
+      "median_util": 0.36504,
+      "avg_replicas": 18.530769938973062,
+      "scaling_actions_per_app_day": 23.013257575757574,
+      "savings_vs_baseline_pct": 84.57,
+      "median_app_savings_pct": 66.16,
+      "violation_penalty": 4.0,
+      "train_seconds": 292.3,
+      "cumulative_reward": -280.50625871685713,
+      "baseline_reward": {
+        "reactive_hpa": -534.7791214154707,
+        "cloudopt_rules": -286.90411176374596
+      }
+    },
+    {
+      "policy": "rl_ppo_vp8",
+      "total_cost_usd": 26087.4,
+      "violation_rate": 0.02166193181818182,
+      "apps_with_violation_share": 0.5492424242424242,
+      "mean_util": 0.3616977577124106,
+      "median_util": 0.3525794180648095,
+      "avg_replicas": 18.967947706228955,
+      "scaling_actions_per_app_day": 22.393939393939394,
+      "savings_vs_baseline_pct": 84.28,
+      "median_app_savings_pct": 64.91,
+      "violation_penalty": 8.0,
+      "train_seconds": 292.9,
+      "cumulative_reward": -332.10070717196663,
+      "baseline_reward": {
+        "reactive_hpa": -879.2942729306222,
+        "cloudopt_rules": -301.75259661223083
+      }
+    }
+  ],
+  "baselines": {
+    "reactive_hpa": {
+      "policy": "reactive_hpa",
+      "total_cost_usd": 18464.85,
+      "violation_rate": 0.14952914562289563,
+      "apps_with_violation_share": 0.8257575757575758,
+      "mean_util": 0.5644313823531965,
+      "median_util": 0.5852,
+      "avg_replicas": 11.577329282407407,
+      "scaling_actions_per_app_day": 27.039772727272727,
+      "savings_vs_baseline_pct": 88.87,
+      "median_app_savings_pct": 78.4
+    },
+    "cloudopt_rules": {
+      "policy": "cloudopt_rules",
+      "total_cost_usd": 32125.91,
+      "violation_rate": 0.006444654882154882,
+      "apps_with_violation_share": 0.571969696969697,
+      "mean_util": 0.38562506598590557,
+      "median_util": 0.4047461936932706,
+      "avg_replicas": 21.487380313552187,
+      "scaling_actions_per_app_day": 25.642045454545453,
+      "savings_vs_baseline_pct": 80.64,
+      "median_app_savings_pct": 65.67
+    }
+  }
+}

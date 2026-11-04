@@ -1,0 +1,184 @@
+{
+  "recommendations": 596,
+  "with_anomaly": 2,
+  "template": {
+    "n": 596,
+    "all_checks_passed_pct": 99.3,
+    "mean_score_pct": 99.9,
+    "per_check_pass_pct": {
+      "has_all_fields": 100.0,
+      "replica_counts": 100.0,
+      "direction": 100.0,
+      "cites_forecast": 100.0,
+      "anomaly_consistent": 99.8,
+      "cost_sign": 100.0,
+      "risk_cited": 100.0,
+      "threshold_claims_true": 99.5,
+      "confidence_label": 100.0,
+      "no_field_names": 100.0,
+      "no_invented_numbers": 100.0
+    },
+    "examples_failed": [
+      {
+        "passed": 10,
+        "total": 11,
+        "checks": {
+          "has_all_fields": true,
+          "replica_counts": true,
+          "direction": true,
+          "cites_forecast": true,
+          "anomaly_consistent": true,
+          "cost_sign": true,
+          "risk_cited": true,
+          "threshold_claims_true": false,
+          "confidence_label": true,
+          "no_field_names": true,
+          "no_invented_numbers": true
+        },
+        "unknown_numbers": []
+      },
+      {
+        "passed": 10,
+        "total": 11,
+        "checks": {
+          "has_all_fields": true,
+          "replica_counts": true,
+          "direction": true,
+          "cites_forecast": true,
+          "anomaly_consistent": true,
+          "cost_sign": true,
+          "risk_cited": true,
+          "threshold_claims_true": false,
+          "confidence_label": true,
+          "no_field_names": true,
+          "no_invented_numbers": true
+        },
+        "unknown_numbers": []
+      },
+      {
+        "passed": 10,
+        "total": 11,
+        "checks": {
+          "has_all_fields": true,
+          "replica_counts": true,
+          "direction": true,
+          "cites_forecast": true,
+          "anomaly_consistent": false,
+          "cost_sign": true,
+          "risk_cited": true,
+          "threshold_claims_true": true,
+          "confidence_label": true,
+          "no_field_names": true,
+          "no_invented_numbers": true
+        },
+        "unknown_numbers": []
+      },
+      {
+        "passed": 10,
+        "total": 11,
+        "checks": {
+          "has_all_fields": true,
+          "replica_counts": true,
+          "direction": true,
+          "cites_forecast": true,
+          "anomaly_consistent": true,
+          "cost_sign": true,
+          "risk_cited": true,
+          "threshold_claims_true": false,
+          "confidence_label": true,
+          "no_field_names": true,
+          "no_invented_numbers": true
+        },
+        "unknown_numbers": []
+      }
+    ]
+  },
+  "openai": {
+    "n": 40,
+    "all_checks_passed_pct": 95.0,
+    "mean_score_pct": 99.5,
+    "per_check_pass_pct": {
+      "has_all_fields": 100.0,
+      "replica_counts": 100.0,
+      "direction": 100.0,
+      "cites_forecast": 100.0,
+      "anomaly_consistent": 100.0,
+      "cost_sign": 100.0,
+      "risk_cited": 100.0,
+      "threshold_claims_true": 100.0,
+      "confidence_label": 95.0,
+      "no_field_names": 100.0,
+      "no_invented_numbers": 100.0
+    },
+    "examples_failed": [
+      {
+        "passed": 10,
+        "total": 11,
+        "checks": {
+          "has_all_fields": true,
+          "replica_counts": true,
+          "direction": true,
+          "cites_forecast": true,
+          "anomaly_consistent": true,
+          "cost_sign": true,
+          "risk_cited": true,
+          "threshold_claims_true": true,
+          "confidence_label": false,
+          "no_field_names": true,
+          "no_invented_numbers": true
+        },
+        "unknown_numbers": [],
+        "text": "Recommendation: Reduce email-worker replicas from 43 to 22.\nReason: The median forecast for the next hour is 1.11 busy workers (90th percentile 2.43) against 0.36 now; with 22 replicas peak utilisation would be only 5.5%, well below the 70% target and maintaining low risk.\nEstimated cost impact: -$2.07/hour (-$1513.68/month at AWS Fargate (approx.)).\nEstimated risk: SLA-violation risk 0.5% -> 0.5% over the next hour.\nConfidence: Medium (0.44).\nAction status: Applied automatically (within autopilot guardrail)."
+      },
+      {
+        "passed": 10,
+        "total": 11,
+        "checks": {
+          "has_all_fields": true,
+          "replica_counts": true,
+          "direction": true,
+          "cites_forecast": true,
+          "anomaly_consistent": true,
+          "cost_sign": true,
+          "risk_cited": true,
+          "threshold_claims_true": true,
+          "confidence_label": false,
+          "no_field_names": true,
+          "no_invented_numbers": true
+        },
+        "unknown_numbers": [],
+        "text": "Recommendation: Reduce email-worker replicas from 22 to 2.\nReason: The median forecast for the next hour is 1.11 busy workers (90th percentile 2.43) against 0.36 now; with 22 replicas peak utilisation would be only 6%, and 2 replicas keep it at 61%, below the 70% target.\nEstimated cost impact: -$1.97/hour (-$1441.60/month at AWS Fargate (approx.)).\nEstimated risk: SLA-violation risk 1% -> 5% over the next hour.\nConfidence: Medium (0.44).\nAction status: Expired (forecast window passed)."
+      }
+    ],
+    "model": "gpt-4.1-mini",
+    "sources": {
+      "openai": 38,
+      "openai_retry": 2
+    },
+    "note": "raw first drafts from the LLM, before verification"
+  },
+  "openai_verified": {
+    "n": 40,
+    "all_checks_passed_pct": 100.0,
+    "mean_score_pct": 100.0,
+    "per_check_pass_pct": {
+      "has_all_fields": 100.0,
+      "replica_counts": 100.0,
+      "direction": 100.0,
+      "cites_forecast": 100.0,
+      "anomaly_consistent": 100.0,
+      "cost_sign": 100.0,
+      "risk_cited": 100.0,
+      "threshold_claims_true": 100.0,
+      "confidence_label": 100.0,
+      "no_field_names": 100.0,
+      "no_invented_numbers": 100.0
+    },
+    "examples_failed": [],
+    "sources": {
+      "openai": 38,
+      "openai_retry": 2
+    },
+    "note": "what users see: verified draft, corrected retry, or template fallback"
+  }
+}

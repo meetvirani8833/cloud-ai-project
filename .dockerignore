@@ -1,0 +1,10 @@
+.venv
+data
+frontend
+**/__pycache__
+**/*.pyc
+ml/artifacts/*
+!ml/artifacts/demo
+.env
+.git
+reports/figures

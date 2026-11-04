@@ -1,0 +1,38 @@
+{
+  "method": "event-level; thresholds tuned on validation days (seed 1), reported on test days (seed 2)",
+  "test_events": {
+    "spike": 274,
+    "drop": 259,
+    "surge": 259
+  },
+  "residual_iforest": {
+    "precision": 0.3991,
+    "recall": 0.8124,
+    "f1": 0.5352,
+    "surge_false_alarm": 0.1699,
+    "alerts": 1090,
+    "threshold": 0.6317
+  },
+  "ablation_iforest_without_band_check": {
+    "precision": 0.3583,
+    "recall": 0.8236,
+    "f1": 0.4994,
+    "surge_false_alarm": 0.1776,
+    "alerts": 1228
+  },
+  "ablation_forecast_band_only": {
+    "precision": 0.0513,
+    "recall": 0.9587,
+    "f1": 0.0974,
+    "surge_false_alarm": 0.9691,
+    "alerts": 10191
+  },
+  "raw_threshold_baseline": {
+    "precision": 0.16,
+    "recall": 0.6979,
+    "f1": 0.2603,
+    "surge_false_alarm": 0.2008,
+    "alerts": 2356,
+    "k": 4
+  }
+}

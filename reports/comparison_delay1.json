@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "apps": 264,
+    "tenants": 199,
+    "window": "test days 13-14",
+    "provision_delay_slots": 1,
+    "pricing": {
+      "key": "aws_fargate",
+      "label": "AWS Fargate (approx.)",
+      "vcpu_hour": 0.04048,
+      "gb_hour": 0.004445
+    },
+    "target_util": 0.7,
+    "sla_util": 0.9
+  },
+  "results": [
+    {
+      "policy": "static_peak",
+      "total_cost_usd": 165940.07,
+      "violation_rate": 0.01816998106060606,
+      "apps_with_violation_share": 0.06060606060606061,
+      "mean_util": 0.18920381372617456,
+      "median_util": 0.11413896294418965,
+      "avg_replicas": 182.31060606060606,
+      "scaling_actions_per_app_day": 0.0,
+      "savings_vs_baseline_pct": 0.0,
+      "median_app_savings_pct": 0.0
+    },
+    {
+      "policy": "static_observed",
+      "total_cost_usd": 51792.29,
+      "violation_rate": 0.04665140993265993,
+      "apps_with_violation_share": 0.30303030303030304,
+      "mean_util": 0.24154793315580028,
+      "median_util": 0.19025066666666665,
+      "avg_replicas": 29.62121212121212,
+      "scaling_actions_per_app_day": 0.0,
+      "savings_vs_baseline_pct": 68.79,
+      "median_app_savings_pct": 37.96
+    },
+    {
+      "policy": "reactive_hpa",
+      "total_cost_usd": 17505.98,
+      "violation_rate": 0.16489109848484848,
+      "apps_with_violation_share": 0.8333333333333334,
+      "mean_util": 0.5807685610255078,
+      "median_util": 0.5903949769971933,
+      "avg_replicas": 10.948475641835017,
+      "scaling_actions_per_app_day": 27.104166666666668,
+      "savings_vs_baseline_pct": 89.45,
+      "median_app_savings_pct": 79.15
+    },
+    {
+      "policy": "naive_persistence",
+      "total_cost_usd": 21013.2,
+      "violation_rate": 0.05193208122895623,
+      "apps_with_violation_share": 0.7727272727272727,
+      "mean_util": 0.4937227916204735,
+      "median_util": 0.5171441569790021,
+      "avg_replicas": 13.705998789983164,
+      "scaling_actions_per_app_day": 73.8409090909091,
+      "savings_vs_baseline_pct": 87.34,
+      "median_app_savings_pct": 74.23
+    },
+    {
+      "policy": "naive_moving_max_30m",
+      "total_cost_usd": 33036.03,
+      "violation_rate": 0.017413720538720538,
+      "apps_with_violation_share": 0.6893939393939394,
+      "mean_util": 0.4249351267156176,
+      "median_util": 0.4482168148111455,
+      "avg_replicas": 21.251703230218855,
+      "scaling_actions_per_app_day": 29.755681818181817,
+      "savings_vs_baseline_pct": 80.09,
+      "median_app_savings_pct": 69.05
+    },
+    {
+      "policy": "oracle",
+      "total_cost_usd": 21006.64,
+      "violation_rate": 0.0,
+      "apps_with_violation_share": 0.0,
+      "mean_util": 0.47054498624710833,
+      "median_util": 0.5075200000000001,
+      "avg_replicas": 13.704032512626263,
+      "scaling_actions_per_app_day": 73.73674242424242,
+      "savings_vs_baseline_pct": 87.34,
+      "median_app_savings_pct": 74.26
+    }
+  ]
+}

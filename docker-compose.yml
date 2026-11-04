@@ -1,0 +1,20 @@
+services:
+  db:
+    # TimescaleDB by default; DB_IMAGE=postgres:16 also works (hypertables are then skipped).
+    image: ${DB_IMAGE:-timescale/timescaledb:2.17.2-pg16}
+    container_name: cloudopt-db
+    environment:
+      POSTGRES_USER: cloudopt
+      POSTGRES_PASSWORD: cloudopt
+      POSTGRES_DB: cloudopt
+    ports:
+      - "5433:5432"  # 5433 on the host: avoids clashing with a locally installed PostgreSQL
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cloudopt"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  dbdata:

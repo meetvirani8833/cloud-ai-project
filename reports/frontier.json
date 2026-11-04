@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "apps": 264,
+    "window": "test days 13-14",
+    "provision_delay_slots": 0,
+    "static_peak": {
+      "knob": null,
+      "cost": 165940.07,
+      "violation_rate": 0.01816998106060606
+    },
+    "oracle": {
+      "knob": null,
+      "cost": 20532.42,
+      "violation_rate": 0.0
+    }
+  },
+  "curves": [
+    {
+      "policy": "reactive_hpa",
+      "label": "Reactive autoscaler (target util. 30\u201380%)",
+      "points": [
+        {
+          "knob": 0.3,
+          "cost": 42691.36,
+          "violation_rate": 0.027896148989898988
+        },
+        {
+          "knob": 0.4,
+          "cost": 32051.3,
+          "violation_rate": 0.045362478956228955
+        },
+        {
+          "knob": 0.5,
+          "cost": 25701.68,
+          "violation_rate": 0.06561053240740741
+        },
+        {
+          "knob": 0.6,
+          "cost": 21508.1,
+          "violation_rate": 0.1041272095959596
+        },
+        {
+          "knob": 0.7,
+          "cost": 18464.85,
+          "violation_rate": 0.14952914562289563
+        },
+        {
+          "knob": 0.8,
+          "cost": 16192.01,
+          "violation_rate": 0.2332767781986532
+        }
+      ]
+    },
+    {
+      "policy": "naive_moving_max_30m",
+      "label": "Naive 30-min max (margin 1.0\u20131.5\u00d7)",
+      "points": [
+        {
+          "knob": 1.0,
+          "cost": 33010.09,
+          "violation_rate": 0.01473721590909091
+        },
+        {
+          "knob": 1.1,
+          "cost": 36283.65,
+          "violation_rate": 0.01073889941077441
+        },
+        {
+          "knob": 1.25,
+          "cost": 41173.92,
+          "violation_rate": 0.007904566498316497
+        },
+        {
+          "knob": 1.5,
+          "cost": 49342.06,
+          "violation_rate": 0.005714699074074074
+        }
+      ]
+    },
+    {
+      "policy": "predictive_xgb",
+      "label": "XGBoost forecast only (p50\u2013p99)",
+      "points": [
+        {
+          "knob": "p50x1.0",
+          "cost": 18326.11,
+          "violation_rate": 0.06519623316498316
+        },
+        {
+          "knob": "p90x1.0",
+          "cost": 23475.15,
+          "violation_rate": 0.012547348484848484
+        },
+        {
+          "knob": "p95x1.0",
+          "cost": 27074.01,
+          "violation_rate": 0.006516992845117845
+        },
+        {
+          "knob": "p99x1.0",
+          "cost": 61270.4,
+          "violation_rate": 0.0012165930134680136
+        },
+        {
+          "knob": "p99x1.15",
+          "cost": 70418.12,
+          "violation_rate": 0.0009403935185185185
+        },
+        {
+          "knob": "p99x1.3",
+          "cost": 79552.95,
+          "violation_rate": 0.0007365319865319865
+        }
+      ]
+    },
+    {
+      "policy": "cloudopt_no_lookahead",
+      "label": "Ablation: CloudOpt without look-ahead scale-in",
+      "points": [
+        {
+          "knob": "p50x1.0",
+          "cost": 20309.04,
+          "violation_rate": 0.045763625841750845
+        },
+        {
+          "knob": "p90x1.0",
+          "cost": 27666.2,
+          "violation_rate": 0.008588489057239057
+        },
+        {
+          "knob": "p95x1.0",
+          "cost": 32242.11,
+          "violation_rate": 0.004715119949494949
+        },
+        {
+          "knob": "p99x1.0",
+          "cost": 66717.7,
+          "violation_rate": 0.000743108164983165
+        },
+        {
+          "knob": "p99x1.15",
+          "cost": 76675.74,
+          "violation_rate": 0.0005458228114478115
+        },
+        {
+          "knob": "p99x1.3",
+          "cost": 86622.98,
+          "violation_rate": 0.0004471801346801347
+        }
+      ]
+    },
+    {
+      "policy": "cloudopt",
+      "label": "CloudOpt (forecast + anomaly guard + look-ahead scale-in)",
+      "points": [
+        {
+          "knob": "p50x1.0",
+          "cost": 22459.24,
+          "violation_rate": 0.03870738636363636
+        },
+        {
+          "knob": "p90x1.0",
+          "cost": 32125.91,
+          "violation_rate": 0.006444654882154882
+        },
+        {
+          "knob": "p95x1.0",
+          "cost": 37320.77,
+          "violation_rate": 0.0035445601851851853
+        },
+        {
+          "knob": "p99x1.0",
+          "cost": 69715.26,
+          "violation_rate": 0.0005852798821548822
+        },
+        {
+          "knob": "p99x1.15",
+          "cost": 80103.81,
+          "violation_rate": 0.0004603324915824916
+        },
+        {
+          "knob": "p99x1.3",
+          "cost": 90500.9,
+          "violation_rate": 0.0003748421717171717
+        }
+      ]
+    },
+    {
+      "policy": "rl_ppo",
+      "label": "RL agent, PPO (violation penalty 1\u20138)",
+      "points": [
+        {
+          "knob": 1.0,
+          "cost": 19071.3,
+          "violation_rate": 0.05735742845117845
+        },
+        {
+          "knob": 2.0,
+          "cost": 23275.52,
+          "violation_rate": 0.02741608796296296
+        },
+        {
+          "knob": 4.0,
+          "cost": 25609.82,
+          "violation_rate": 0.023042929292929292
+        },
+        {
+          "knob": 8.0,
+          "cost": 26087.4,
+          "violation_rate": 0.02166193181818182
+        }
+      ]
+    }
+  ],
+  "headline": {
+    "Cheaper than reactive autoscaling at equal SLA (2.8% violations)": 39.8,
+    "Savings vs static peak provisioning at \u22641% violations": 80.6,
+    "RL agent cost vs CloudOpt policy at equal SLA (mean over RL points)": -7.0,
+    "Extra cost of CloudOpt's stability layers vs forecast-only at 1% violations": 24.3
+  }
+}
